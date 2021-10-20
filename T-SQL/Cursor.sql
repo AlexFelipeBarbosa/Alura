@@ -1,0 +1,23 @@
+USE SUCOS_VENDAS;
+GO
+
+DECLARE @nome VARCHAR(200);
+DECLARE cursor1 CURSOR FOR
+SELECT TOP 1000
+       NOME
+FROM dbo.[TABELA DE CLIENTES];
+OPEN cursor1;
+FETCH NEXT FROM cursor1
+INTO @nome;
+WHILE @@FETCH_STATUS = 0
+BEGIN
+
+    PRINT @nome;
+    FETCH NEXT FROM cursor1
+    INTO @nome;
+
+
+END;
+
+CLOSE cursor1;
+DEALLOCATE cursor1;
