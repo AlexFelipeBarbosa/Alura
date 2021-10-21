@@ -1,0 +1,6 @@
+USE SUCOS_VENDAS;
+GO
+
+CREATE VIEW vw_Aleatorio
+AS
+SELECT RAND() AS value;
